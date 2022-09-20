@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Dcard分析家</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+div{
+    border-radius: 5px;
+    background: #19456b;
+    font-family: 微軟正黑體;
+    }
+p{
+    font-family: 微軟正黑體;    
+    }
+input[type="text"]{
+    margin-left: 280px;
+    margin-top: 15px;
+    padding: 15px 15px; 
+    border: 2px #23689B solid;
+    /*cursor: pointer;*/
+    border-radius: 5px; }
+input[type="button"]{
+    background: #e7e7de;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    }
+input[type="submit"],input[type="reset"]{
+    background: #e7e7de;
+    color: #23689B;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    }
+fieldset {
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #19456b;
+    }
+legend {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #19456b;
+    }
+#textbox{
+    text-align: center;
+    }
+.Header1{
+    background: #23689B;
+    height: 100px;
+    text-align: left;
+    line-height: 100px;
+    border-radius: 5px 5px 0px 0px;
+    }
+.Header2{
+    /*background: #23689B;*/
+    height: 120px;
+    text-align: left;
+    }
+.Body1{
+    background: #19456b;
+    height: 260px;
+    width: 100%;
+    text-align: left;
+    /*line-height: 300px;*/
+    float: left;
+    }
+.Body2{
+    background: #19456b;
+    height: 200px;
+    width: 100%;
+    text-align: left;
+    /*line-height: 100px;*/
+    float: left;
+    }
+.Leftbar{
+    background: #19456b;
+    height: 600px;
+    width: 50%;
+    text-align: left;
+    /*margin-left: 10px;
+    line-height: 300px;*/
+    float: left;
+    }
+
+.Rightbar{
+    background: #19456b;
+    height: 600px;
+    width: 50%;
+    text-align: left;
+    /*margin-right: 10px;
+    line-height: 300px;*/
+    float: left;
+    }
+.clearfix{
+    clear: both;
+    }
+h1{
+    color: #e7e7de;
+    text-align: center;
+    }
+h2{
+    color: #DAD7D0;
+    text-align: center;
+    /*color: #e7e7de;*/
+    }
+
+</style>
+</head>
+    <div class="wrap">
+        <div class="Header1">
+            <h1><span><input type="button" value="🔙" style="width: 50px;height: 40px;font-size: 18px;position: relative; left: 20px; top: -25px;" onclick="history.back()"></span><span style="padding: 585px">Dcard分析家</span></h1>
+        </div>
+        {% if name == "" %}
+        <div class="Header2">
+        
+            <form method="post">
+                <fieldset>
+                    <legend>網址</legend>
+                    <input type="text" name="user" size="115" placeholder="輸入網址">
+                    <input type="submit" name="send" value="送出">
+                    <input type="reset" class="square" value="重新來過">
+                </fieldset>
+            </form>
+        
+            <!--
+                <form method="post">
+                <fieldset>
+                    <input type="text" name="user" size="115" placeholder="輸入網址">
+                    <br>
+                    <input type="submit" name="send" value="確認" style="width: 100px;height: 30px;font-size: 16px; position: relative; left: 590px; top: -5px;">
+                    <input type="reset" value="重新" style="width: 100px;height: 30px;font-size: 16px; position: relative; left: 605px; top: -5px;">
+                </fieldset>
+             </form>
+            -->
+        </div>
+        {% else %}
+        <h2>網址: <a href="{{name}}"><span style="color: #cdd0cb;">{{name}}</span></a></h2>
+        <h2><span style="color: #e5707e;">{{name5}}</span></h2>
+        <div class="Body1">
+            <h2>文章內容</h2>
+            <div id="textbox">
+                <textarea style="border-radius: 5px;width: 1300px;height: 180px;font-size: 16px; background-color:#FFF0D4;"; name="URL" tabindex="1">{{name2}}</textarea>
+            </div>
+        </div>
+        <div class="Body2">
+            <h2>熱門回應🔥</h2>
+            <div id="textbox">
+                <textarea style="border-radius: 5px;width: 1300px;height: 120px;font-size: 16px; background-color:#FFF0D4;"; name="URL" tabindex="1">{{name8}}</textarea>
+            </div>
+        </div>   
+        <div class="Leftbar">
+            <h2>正面💘<span style="color: #e5707e;">{{name6}}</span></h2>
+            <div id="textbox">
+                <textarea style="border-radius: 5px;width: 600px;height: 480px; background-color:#FFF0D4;" name="URL" tabindex="1">{{name3}}</textarea>
+            </div>
+        </div>
+            
+        <div class="Rightbar">
+            <h2>負面🤬<span style="color: #e5707e;">{{name7}}</span></h2>
+            <div id="textbox">
+                <textarea style="border-radius: 5px;width: 600px;height: 480px; background-color:#FFF0D4;" name="URL" tabindex="1">{{name4}}</textarea>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        {% endif %}
+    </div>
+</html>
+

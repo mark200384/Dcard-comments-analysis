@@ -1,0 +1,17 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ironman Day4</title>
+</head>
+<body>
+	{% if name == "" %}
+	<form method="post">
+		<input type="text" name="user">
+		<input type="submit" name="send" value="送出">
+	</form>
+	{% else %}
+	<p>Hello,{{name}}</p>
+	{% endif %}
+</body>
+</html>

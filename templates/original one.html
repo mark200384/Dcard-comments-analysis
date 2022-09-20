@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Dcard - 意見回饋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+head, section, footer, aside, nav article, figure, figcaption{
+	display:block;}
+body{
+	width: 85%;
+	color: #ffffff;
+	background-color: #003D79;
+	background-position: center;
+	font-family: Georgia, times, serif;
+	line-height: 1.4em;
+	margin: 0px auto;}
+.wrapper{
+	margin: 0px auto;
+	<!.border: 2px solid #000000;..>
+	background-color: #ffffff;}
+.leftpage{ 
+	float:left; 
+	width:40%;
+	margin-left:45px;
+	<!..margin-left: 16px; margin-right: 16px; margin-bottom: 8px; margin-top: 5px;..>
+  padding: 15px;} 
+.rightpage{ 
+	float:left; 
+	width:40%;
+	margin-left:55px; <!..margin-right: 8px; margin-bottom: 8px; margin-top: 5px;..>
+  padding: 15px;} 
+header{
+	height: 200px;}
+h1{
+	font-size: 60px;	
+	text-align: center;}
+<!....
+nav li{
+	background-color: black;
+	color: whitesmoke;
+	display: inline;}
+nav li a{	
+	float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 15px;}
+nav li a:hover, nav li a.current{
+	background-color: #ddd;
+    color: black;}
+...>
+a{
+	color: #000000;
+	text-decoration: none;}
+h1, h2, h3{
+	font-weight: normal;}
+h2{
+	<!..margin: -10px 30px 20px 30px;
+	margin: 0px auto;
+	padding: 0px;
+	font-weight: bold;}..>
+}
+<!...h3{
+	margin: 0px 0px 10px 0px;}...>
+p{
+	font-size: 18px;
+	<!...margin: 20px 25px 20px 25px;}...>
+	margin: 0px auto;
+.square{
+	font-size: 15px;}
+fieldset{
+  border: 3px solid gramy;
+  margin-left: 16px; margin-right: 16px; margin-bottom: 8px; margin-top: 5px;
+  padding: 15px;
+  font: bold 17px;}
+
+
+</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<header>
+			<br><br>
+			<h1>Dcard留言</h1>
+			<br>
+		</header>
+
+		{% if name == "" %}
+		<form method="post">
+			<fieldset>
+				<legend>網址</legend>
+				<input type="text" name="user">
+				<input type="submit" name="send" value="送出">
+				<input class="square" type="reset" value="重新來過">
+			</fieldset>
+		</form>
+		{% else %}
+		<font size="5"><legend>網址</legend></font>
+		<p><a href="{{name}}"><span style="color:orange;">{{name}}</span></a></p>
+		<p>
+		<p>{{name5}}</p>
+		<div>
+			<p><font size="5">正文</font></p>
+			<textarea  style="background-image: background-color:#FFF0D4;;" name="URL" rows="20" cols="160" tabindex="1" class "title">{{name2}}</textarea>
+		</div>
+		</p>
+			<p ><font size="5">熱門回應🔥</font></p>
+			<textarea style="font-size:18px;background-color:#FFF0D4;" name="URL" rows="15" cols="120" tabindex="1" class "title">{{name8}}</textarea>
+	
+		<p>
+			<div class="leftpage">
+				<font size="5">正面💘 <span style="color:orange;">{{name6}}</span></font>
+				<textarea style="background-color:#FFF0D4;" name="URL" rows="50" cols="80" tabindex="1" class "title">{{name3}}</textarea>
+			</div>
+			<div class="rightpage">
+				<font size="5">負面🤬 <span style="color:orange;">{{name7}}</span></font>
+				<textarea style="background-color:#FFF0D4;" name="URL" rows="50" cols="80" tabindex="1" class "title">{{name4}}</textarea>
+			</div>
+			<div>
+ 				<input type="button" value="回上頁!!!" onclick="history.back()">
+  			</div>
+		</p>
+		{% endif %}
+
+
+		</form>
+		<br>
+		</td>
+		</tr>
+
+		</table>
+		<footer></footer>
+	</div>
+	
+	
+	
+</body>
+</html>
